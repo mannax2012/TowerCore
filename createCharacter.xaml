@@ -1,0 +1,399 @@
+﻿<Window x:Class="TowerCore.createCharacter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TowerCore"
+        mc:Ignorable="d"
+        Title="createCharacter"     
+    Height="450" 
+    Width="800" 
+    WindowStyle="None" 
+    AllowsTransparency="True" 
+    ResizeMode="NoResize"
+    Background="Transparent">
+    <Grid>
+        <Border MouseLeftButtonDown="Window_MouseLeftButtonDown">
+            <Border.Background>
+                <ImageBrush ImageSource="img/createCharBackground.jpg" />
+            </Border.Background>
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="39*"/>
+                <ColumnDefinition Width="46*"/>
+                <ColumnDefinition Width="95*"/>
+                <ColumnDefinition Width="135*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="64*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="64*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="13" Grid.Column="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Button x:Name="createCancelButton"
+                Margin="5"
+                Width="140"
+                IsEnabled="True"
+                ToolTip="Title Screen"
+                
+                Content="Back"
+                FontFamily="Ms Sans Serif"
+                Foreground="White" 
+                BorderBrush="Transparent"
+                Background="Transparent"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Label Content="Create New Character" FontFamily="Ms Sans Serif" FontSize="14" FontWeight="Bold" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="2">
+                <StackPanel>
+                    <Label Content="Character Name:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="3">
+                <StackPanel>
+                    <Label Content="Level:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="4">
+                <StackPanel>
+                    <Label Content="Experience:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="5">
+                <StackPanel>
+                    <Label Content="Class:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="6">
+                <StackPanel>
+                    <Label Content="Strength:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="7">
+                <StackPanel>
+                    <Label Content="Dexterity:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="8">
+                <StackPanel>
+                    <Label Content="Stamina:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="9">
+                <StackPanel>
+                    <Label Content="Intellect:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="10">
+                <StackPanel>
+                    <Label Content="Focus:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="11">
+                <StackPanel>
+                    <Label Content="Wisdom:" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="2">
+                <StackPanel Grid.ColumnSpan="14">
+                    <TextBox x:Name="NameTextBox" Text="{Binding PlayerCharacter.PlayerName}" BorderBrush="Transparent" Foreground="Black" Height="26" Width="90" SelectionBrush="White" CaretBrush="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="3">
+                <StackPanel>
+                    <Label x:Name="levelLabel" Content="1" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="4">
+                <StackPanel>
+                    <Label x:Name="ExPLabel" Content="{Binding PlayerCharacter.ExP}" FontFamily="Ms Sans Serif" FontSize="14" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="5">
+                <StackPanel>
+                    <Label x:Name="classLabel" Content="{Binding PlayerCharacter.ClassName}" FontFamily="Ms Sans Serif" FontSize="14" Height="25" Foreground="Aquamarine"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="6">
+                <StackPanel>
+                    <Label x:Name="strengthLabel" Content="{Binding PlayerCharacter.Strength}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="7">
+                <StackPanel>
+                    <Label x:Name="dexterityLabel" Content="{Binding PlayerCharacter.Dexterity}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="8">
+                <StackPanel>
+                    <Label x:Name="staminaLabel" Content="{Binding PlayerCharacter.Stamina}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="9">
+                <StackPanel>
+                    <Label x:Name="intellectLabel" Content="{Binding PlayerCharacter.Intellect}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="10">
+                <StackPanel>
+                    <Label x:Name="focusLabel" Content="{Binding PlayerCharacter.Focus}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="11">
+                <StackPanel>
+                    <Label x:Name="wisdomLabel" Content="{Binding PlayerCharacter.Wisdom}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="35" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Height="24">
+                <StackPanel VerticalAlignment="Top">
+                    <Label x:Name="maxExPValueLabel" Content="{Binding PlayerCharacter.ExPMax}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="5">
+                <StackPanel>
+                    <ProgressBar x:Name="HealthBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="DarkGreen" Background="Green" BorderBrush="DarkGreen" Value="{Binding PlayerCharacter.PlayerHealth}" Maximum="{Binding PlayerCharacter.PlayerHealthMax}">
+                        <ProgressBar.Template>
+                            <ControlTemplate TargetType="ProgressBar">
+                                <Grid>
+                                    <Rectangle x:Name="PART_Track" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                   Fill="{TemplateBinding Background}"/>
+                                    <Rectangle x:Name="PART_Indicator" HorizontalAlignment="Left" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                   Fill="{TemplateBinding Foreground}"/>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0}/{1}">
+                                                <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                                <Binding Path="Maximum" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </ProgressBar.Template>
+                    </ProgressBar>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4">
+                <StackPanel>
+                    <ProgressBar x:Name="MagicBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="DarkBlue" Background="Blue" BorderBrush="DarkBlue" Value="{Binding PlayerCharacter.PlayerMagic}" Maximum="{Binding PlayerCharacter.PlayerMagicMax}">
+                        <ProgressBar.Template>
+                            <ControlTemplate TargetType="ProgressBar">
+                                <Grid>
+                                    <Rectangle x:Name="PART_Track" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                                    Fill="{TemplateBinding Background}"/>
+                                    <Rectangle x:Name="PART_Indicator" HorizontalAlignment="Left" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                                    Fill="{TemplateBinding Foreground}"/>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0}/{1}">
+                                                <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                                <Binding Path="Maximum" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </ProgressBar.Template>
+                    </ProgressBar>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4">
+                <StackPanel>
+                    <ProgressBar x:Name="ExPBar" Width="150" Height="15"  HorizontalAlignment="Left" Foreground="MediumPurple" Background="Purple" BorderBrush="Black" Value="{Binding PlayerCharacter.ExP}" Maximum="{Binding PlayerCharacter.ExPMax}">
+                        <ProgressBar.Template>
+                            <ControlTemplate TargetType="ProgressBar">
+                                <Grid>
+                                    <Rectangle x:Name="PART_Track" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                                    Fill="{TemplateBinding Background}"/>
+                                    <Rectangle x:Name="PART_Indicator" HorizontalAlignment="Left" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                                     Fill="{TemplateBinding Foreground}"/>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0}/{1}">
+                                                <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                                <Binding Path="Maximum" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </ProgressBar.Template>
+                    </ProgressBar>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="4">
+                <StackPanel>
+                    <Label Content="Skill Points:" FontFamily="Ms Sans Serif" Foreground="Aquamarine" FontSize="14" Width="80" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="5" Grid.RowSpan="4">
+                <StackPanel>
+                    <Label x:Name="characterTotalSP" Content="{Binding PlayerCharacter.SkillPoints}" Foreground="Aquamarine" FontFamily="Ms Sans Serif" FontSize="14" Width="30" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="3" Grid.RowSpan="6">
+                <StackPanel>
+                    <Button x:Name="addStrengthButton"
+        Margin="1"
+        Width="50"
+        Height="20"
+        FontWeight="Normal"
+        IsEnabled="True"
+        ToolTip="Add Strength"
+        Content="Add"
+        HorizontalAlignment="Left"
+        FontFamily="Ms Sans Serif"
+        FontSize="8"
+        Foreground="White" 
+        BorderBrush="White"
+        Background="Black" Command="{Binding AddStrengthCommand}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="7" Grid.Column="3" Grid.RowSpan="6">
+                <StackPanel>
+                    <Button x:Name="addDexterityButton"
+                    Margin="1"
+                    Width="50"
+                    Height="20"
+                    FontWeight="Normal"
+                        VerticalAlignment="Center"
+                        IsEnabled="True"
+                        ToolTip="Add Dexterity"
+                        Content="Add"
+                        HorizontalAlignment="Left"
+                        FontFamily="Ms Sans Serif"
+                        FontSize="8"
+                        Foreground="White" 
+                        BorderBrush="White"
+                        Background="Black" Command="{Binding AddDexterityCommand}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="3" Grid.RowSpan="6">
+                <StackPanel>
+                    <Button x:Name="addStaminaButton"
+                    Margin="1"
+                    Width="50"
+                    Height="20"
+                    FontWeight="Normal"
+                        VerticalAlignment="Center"
+                        IsEnabled="True"
+                        ToolTip="Add Stamina"
+                        Content="Add"
+                        HorizontalAlignment="Left"
+                        FontFamily="Ms Sans Serif"
+                        FontSize="8"
+                        Foreground="White" 
+                        BorderBrush="White"
+                        Background="Black" Command="{Binding AddStaminaCommand}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="9" Grid.Column="3" Grid.RowSpan="5">
+                <StackPanel>
+                    <Button x:Name="addIntellectButton"
+                        Margin="1"
+                        Width="50"
+                        Height="20"
+                        FontWeight="Normal"
+                        VerticalAlignment="Center"
+                        IsEnabled="True"
+                        ToolTip="Add Intellect"
+                        Content="Add"
+                        HorizontalAlignment="Left"
+                        FontFamily="Ms Sans Serif"
+                        FontSize="8"
+                        Foreground="White" 
+                        BorderBrush="White"
+                        Background="Black" Command="{Binding AddIntellectCommand}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="10" Grid.Column="3" Grid.RowSpan="4">
+                <StackPanel>
+                    <Button x:Name="addFocusButton"
+                        Margin="1"
+                            Width="50"
+                    Height="20"
+                    FontWeight="Normal"
+                        VerticalAlignment="Center"
+                        IsEnabled="True"
+                        ToolTip="Add Focus"
+                        Content="Add"
+                        HorizontalAlignment="Left"
+                        FontFamily="Ms Sans Serif"
+                        FontSize="8"
+                        Foreground="White" 
+                        BorderBrush="White"
+                        Background="Black" Command="{Binding AddFocusCommand}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="11" Grid.Column="3" Grid.RowSpan="3">
+                <StackPanel>
+                    <Button x:Name="addWisdomButton"
+                        Margin="1"
+                     Width="50"
+                    Height="20"
+                    FontWeight="Normal"
+                        VerticalAlignment="Center"
+                        IsEnabled="True"
+                        ToolTip="Add Wisdom"
+                        Content="Add"
+                        HorizontalAlignment="Left"
+                        FontFamily="Ms Sans Serif"
+                        FontSize="8"
+                        Foreground="White" 
+                        BorderBrush="White"
+                        Background="Black" Command="{Binding AddWisdomCommand}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="5" Grid.RowSpan="11" Grid.Row="1">
+                <StackPanel Height="257" VerticalAlignment="Top" Grid.Row="3">
+                    <ListBox x:Name="classListBox" Grid.Row="0" Grid.Column="3"  Grid.RowSpan="6"
+                ItemsSource="{Binding AvailableClasses}" 
+                SelectedItem="{Binding PlayerCharacter.CharacterClass}" 
+                DisplayMemberPath="."
+                Margin="0,5,0,5" Foreground="White" Background="{x:Null}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="5">
+                <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+                    <Label Content="Choose Class:" FontFamily="Ms Sans Serif"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="13" Grid.Column="5">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <Button x:Name="createCharButton"
+                Margin="5"
+                Width="140"
+                IsEnabled="True"
+                ToolTip="Create Character"
+                Command="{Binding CreateCharacterCommand}"
+                Content="Create Character"
+                FontFamily="Ms Sans Serif"
+                Foreground="White" 
+                BorderBrush="Transparent"
+                Background="Transparent"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
